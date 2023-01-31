@@ -1,38 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Тестовое задание
 
-## Getting Started
+Необходимо переделать компонент TextSwitch что бы он соотвествовал следующим требованиям:
 
-First, run the development server:
+### Переделать текущую реализацию перемещения слайдера между элементами.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Сейчас у компонента в слайдер находится текст, который меняется в зависимости от положения слайдера. Необходимо сделать три слоя: подложка, слайдер без текста, элемент с текстом. Выглядить должно так:
+![](./image1.svg)
+
+### Расширить количество вариантов.
+
+Сейчас компонент эмулирует поведение checkbox, необходимо добавить возможность использования нескольких значений, компонент должен эмулировать поведение select и возвращать value на события.
+
+```tsx
+<TextSwitch>
+  <Option value="left">Left</Option>
+  <Option value="center">Center</Option>
+  <Option value="right">Right</Option>
+</TextSwitch>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Размер элементов должен быть динамический и зависить от ширины текста.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Сейчас у компонента фиксированная ширина элемента и слайдера. Нужно сделать что бы ширина элемента зависила от контента, а ширина слайдера соотвественно от активного элемента.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Совместимость компонента
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Компонент должен использоваться как кастомный с библиотеками [formik](https://formik.org/) и [react-form-hook](https://react-hook-form.com/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Необязательные задачи.
 
-## Learn More
+Ниже необязательные задачи, но если вы их сделаете это будет плюсом.
 
-To learn more about Next.js, take a look at the following resources:
+### Добавить анимацию с spring
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Можно добавить анимацию перемещения слайдера между элементами с помощью [GSAP](https://greensock.com/docs/v3/GSAP) или [Frame Motion](https://www.framer.com/motion/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Сделать мобильный вариант переключателя.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+С большим количеством элементов переключатель не поместиться на мобильных устройствах. Можно придумать и реализовать альтернативный вид (возможно дропдаун или вертикальный переключатель).
