@@ -1,10 +1,15 @@
-
-import React, { FC } from 'react'
-// import './textswitch.css'
+import './textswitch.css'
+import { FC, HTMLAttributes } from 'react'
 import classnames from 'classnames'
-import { TextSwitchProps } from './textswitch.props';
+import React from 'react'
 
-
+export interface TextSwitchProps extends HTMLAttributes<HTMLButtonElement> {
+  label1?: string
+  label2?: string,
+  key1?: string,
+  key2?: string,
+  initialState?: boolean
+}
 
 const TextSwitchDefault: FC<TextSwitchProps> = ({ label1, label2, key1, key2, initialState = false }, ref) => {
   let [checked, setChecked] = React.useState(initialState);
@@ -25,7 +30,7 @@ const TextSwitchDefault: FC<TextSwitchProps> = ({ label1, label2, key1, key2, in
   React.useEffect(() => {
     if (myRef.current) {
       myRef.current.onclick = (e) => {
-        e.target && setChecked(e.target?.checked)
+        setChecked(e.target.checked)
       }
     }
 
@@ -46,6 +51,7 @@ const TextSwitchDefault: FC<TextSwitchProps> = ({ label1, label2, key1, key2, in
       <input className={inp} checked={checked} type='checkbox' ref={myRef} />
       <span className={slider} placeholder={label2 || 'Buy'} data-value={label1 || 'Sell'}>
         <div>{label1 || 'Sell'}</div>
+        <div>{label2 || 'Buy'}</div>
       </span>
     </label>
   )
