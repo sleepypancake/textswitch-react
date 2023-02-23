@@ -32,11 +32,11 @@ const TextSwitchDefault: ForwardRefRenderFunction<TextSwitchHandle, TextSwitchPr
    Maybe I can somehow pass prop through the context api 
   */
 
-  const slideRef = useRef<HTMLAnchorElement>(null)
+  // const slideRef = useRef<HTMLAnchorElement>(null)
 
-  useEffect(() => {
-    console.log(children, selectedValue)
-  }, [selectedValue, children])
+  // useEffect(() => {
+  //   console.log(children, selectedValue)
+  // }, [selectedValue, children])
 
   return (
     <TextSwitchContext.Provider value={{currentCheked: selectedValue, onChangeSwitcher}}>
