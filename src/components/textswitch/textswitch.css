@@ -55,26 +55,14 @@
     border-radius: 34px;
   }
 }
-
-
-.select-slider {
-  margin: auto;
-  display: flex;
-  justify-content: space-around; 
-  color: var(--system-color);
-  cursor: pointer;
-  background-color: var(--system-color-grey);
-  transition: 0.4s;
-  background-color: rgb(1 65 255 / 30%);
-  border-radius: 34px;
-} */
+*/
 
 .multiswitch {
   width: 100%;
   border: 0;
   padding: 0;
 
-  .slide-container {
+  .multiswitch__container {
     position: relative;
     display: flex;
     line-height: 2em;
@@ -101,7 +89,7 @@
     }
   }
 
-  .slide {
+  .multiswitch__slide {
     position: absolute;
     left: 50%;
     z-index: 1;
@@ -253,12 +241,12 @@
   .multiswitch {
     max-width: fit-content;
 
-    .slide-container {
+    .multiswitch__container {
       flex-direction: column;
       border-radius: 20px;
     }
 
-    .slide {
+    .multiswitch__slide {
       height: 48px;
       border-radius: 20px;
       transition: top 0.1s ease-out;

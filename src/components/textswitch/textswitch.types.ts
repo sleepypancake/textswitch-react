@@ -11,3 +11,9 @@ export interface TextSwitchProps extends HTMLAttributes<HTMLButtonElement> {
 export type ChangeSwitcherType =(value: string) => (e: ChangeEvent<HTMLInputElement>) => void;
 
 export type SwitcherContextType = {currentCheked: string, onChangeSwitcher: ChangeSwitcherType}
+
+export type TextSwitchHandle = {
+    value: string,
+    onChange: ChangeSwitcherType,
+    key: string
+};

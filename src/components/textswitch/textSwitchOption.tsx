@@ -10,11 +10,7 @@ type textSwitchOptionProps = {
     children: string
 }
 
-const TextSwitchOption: FC< textSwitchOptionProps>= ({ value, children }) => {
-    const option = classnames({
-        option: true,
-      })
-
+const TextSwitchOption: FC< textSwitchOptionProps> = ({ value, children }) => {
     
     const switcherContext = useCheckIsNullableContext<SwitcherContextType>(TextSwitchContext);
 
@@ -22,7 +18,6 @@ const TextSwitchOption: FC< textSwitchOptionProps>= ({ value, children }) => {
     return (
       <>
         <input 
-            className={option}
             type="radio" 
             name="textSelectOption" 
             id={value}
